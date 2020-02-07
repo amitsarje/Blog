@@ -86,10 +86,6 @@ def signup(request):
         return render(request,'signup.html')
 
 
-
-def posts_scan(request):
-    return HttpResponse("hello this is amit") 
-
 @login_required
 def posts_update(request , id=None):
     instance = get_object_or_404(Post , id=id)
