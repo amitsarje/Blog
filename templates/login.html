@@ -1,0 +1,18 @@
+{%extends "index.html"%}
+
+{%block content%}
+
+ <div class="container" style="position: relative;top:200px;background-color:rgb(142, 141, 140);text-align:center;width:50%;border-style:solid">
+    <form method="POST" action="{% url 'login' %}">
+    {% csrf_token%}
+    <div style="display:inline-block;background-color:rgb(142, 141, 140) ">Username:<input type='text' name="Username"></div><br><br>
+    <div style="display:inline-block;background-color:rgb(142, 141, 140) ">Password:<input type='password' name="password"></div><br><br>
+    <input type = "submit" class="btn btn-secondary" value='login'>
+    </form>
+</div>
+<div class="container" style="position: relative;top:200px;background-color:rgba(142, 141, 140, 0.421);text-align:center;width:50%;">
+    {% for message in messages%}
+    <h2><i>{{message}}</i></h2>
+    {% endfor %}
+</div>
+{% endblock%}

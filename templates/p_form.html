@@ -1,0 +1,15 @@
+{% extends "index.html"%}
+{% block content1%}
+
+{%endblock content1%}
+{%block content%}
+<div class="container" style="background-color:rgb(189, 187, 185);width:500px;position:relative;top:100px">
+    <form method ="POST" action = "">
+        {%csrf_token%}
+         {{form.as_p}}
+    <input type = "submit" class="btn btn-secondary" value='Save'>
+    <a href="/" class="btn btn-secondary">Cancel</a>
+     </form>
+</div>
+    
+{%endblock%}

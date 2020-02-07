@@ -1,0 +1,24 @@
+
+{%extends "index.html"%}
+
+{% block head%}{{block.super}}|{{instance.title}}{%endblock%}
+{% block content1%}
+Add your Blog
+{%endblock content1%}
+{%block content%}
+<div style="position:relative;top:150px ;">
+    <a href="/update/{{instance.id}}" class="btn btn-secondary">Update</a>
+    <a href="/" class="btn btn-secondary">Return</a>
+   </div>
+   <div class="card-body" style="background-color:rgb(209, 207, 191);height:100%;position:relative;top:150px;border:1mm;background:url('{{ STATIC_URL }}/static/admin/img/gis/newone.jpg')"> 
+    <h1><i>{{title}}</i>           <small><small>{{instance.timestamp}}</small></small></h1>
+    {{instance.content|linebreaks}}<br/>
+   </div>
+  
+   <div style="background-color: rgba(73, 99, 103, 0.421);text-align:left;position:relative;top:150px;width:50%">
+    {% for message in messages%}
+    <h2>{{message}}</h2>
+    {% endfor %}
+</div>
+
+{%endblock%}

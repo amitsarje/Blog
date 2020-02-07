@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{%block content%}
+<div class="container" style="position: relative;top:200px;background-color:rgb(142, 141, 140);text-align:center;width:50%;border-style:solid">
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token%}
+<div style="display:inline-block;background-color:rgb(253, 253, 253) ">Username:</div>    <input type='text' name="Username"><br><br>
+<div style="display:inline-block;background-color:rgb(253, 253, 253) ">Password: &nbsp;</div>  <input type='password' name="password"><br><br>
+<div style="display:inline-block;background-color:rgb(253, 253, 253) ">First_Name:</div>  <input type='text' name="fname"><br><br>
+<div style="display:inline-block;background-color:rgb(253, 253, 253) ">Last_Name: </div>  <input type='text' name="lname"><br><br>
+<div style="display:inline-block;"><input type = "submit" class="btn btn-secondary" value='signup'><br><br>
+</div>
+</div>
+</form>
+<div>
+    {% for message in messages%}
+    <h2><i>{{message}}</i></h2>
+    {% endfor %}
+</div>
+
+{% endblock%}
